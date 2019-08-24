@@ -1,0 +1,37 @@
+{
+	"name": "user",
+	"version": "0.1",
+	"description": "Управление пользователями",
+	"mode": "single",
+	"defaults": {
+		"cwd": "${folderName}/${packageName}"
+	},
+	"dependencies": {},
+	"triggers": {
+		"beforeInstall": {},
+		"afterInstall": "add-user"
+	},
+	"commands": {
+		"add-user": {
+			"name": "Создание пользователя",
+			"description": "",
+			"script": "./add-user.sh",
+			"args": [
+				{
+                    "key": "",
+                    "name": "Имя пользователя",
+                    "description": "Введите имя пользователя, пример: valstan",
+					"default": "",
+					"required": true
+				},
+                {
+                    "key": "",
+                    "name": "Пароль пользователя",
+					"description": "Введите пароль пользователя, пример: kolobok2019",
+					"default": "",
+					"required": true                    
+				}
+			]
+		}
+	}
+}

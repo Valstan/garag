@@ -1,0 +1,98 @@
+{
+    "name": "backup-bd",
+    "version": "1",
+    "description": "Бэкап базы данных",
+    "mode": "single",
+    "defaults": {
+        "cwd": "${folderName}/${packageName}"
+    },
+    "dependencies": {},
+    "triggers": {
+        "beforeInstall": {},
+        "afterInstall": "setup"
+    },
+    "commands": {
+        "cron--------------": {
+            "name": "Установка автобэкапа в Крон",
+            "description": "",
+            "script": "./cron.sh",
+            "args": [
+                {
+                    "key": "",
+                    "name": "Адрес ФТП",
+                    "description": "Введите адрес ФТП, пример: ftp://addres.ftp.ru",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "ftp_dir_backup",
+                    "name": "Папка с бэкапами базы данных на ФТП",
+                    "description": "Введите имя папки с бэкапами, пример: backups",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "port_sftp",
+                    "name": "Порт SFTP сервера",
+                    "description": "Введите порт SFTP сервера, пример: 2222",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "nameBD",
+                    "name": "Имя базы данных",
+                    "description": "Введите имя базы данных, пример: FortunalogCRM",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "name_server",
+                    "name": "Имя местного сервера",
+                    "description": "Введите имя сервера (без точек и пробелов), пример: irkaserver_ru",
+                    "default": "",
+                    "required": true
+                }
+            ]
+        },
+        "setup": {
+            "name": "Настройка Крона пользователя",
+            "description": "",
+            "script": "./setup.sh"
+        },
+        "backup--------------": {
+            "name": "Создание бэкапа",
+            "description": "",
+            "script": "./create-backup.sh",
+            "args": [
+                {
+                    "key": "",
+                    "name": "Имя базы данных",
+                    "description": "Введите имя базы, пример: mybd",
+                    "default": "",
+                    "required": true
+                }
+            ]
+        },
+        "cron-change--------------": {
+            "name": "Создание расписания крона",
+            "description": "",
+            "script": "./cron-change.sh",
+            "args": [
+                {
+                    "key": "",
+                    "name": "Имя базы данных",
+                    "description": "Введите имя базы, пример: mybd",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "",
+                    "name": "Период запуска",
+                    "description": "Введите период запуска, пример: каждые 15 минут 15,30,45 * * * * или 0 * * * *",
+                    "default": "15,30,45 * * * *",
+                    "required": true
+                }
+            ]
+        }
+    }
+}
