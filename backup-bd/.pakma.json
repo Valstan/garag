@@ -12,10 +12,10 @@
         "afterInstall": "setup"
     },
     "commands": {
-        "cron--------------": {
-            "name": "Установка автобэкапа в Крон",
+        "backup-ftp": {
+            "name": "Сделать Бэкап БД и отправить на ФТП",
             "description": "",
-            "script": "./cron.sh",
+            "script": "./backup-ftp.sh",
             "args": [
                 {
                     "key": "",
@@ -55,7 +55,7 @@
             ]
         },
         "setup": {
-            "name": "Настройка Крона пользователя",
+            "name": "Создание папки Бэкапа базы данных Монго текущего пользователя",
             "description": "",
             "script": "./setup.sh"
         },
