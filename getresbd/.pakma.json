@@ -1,5 +1,5 @@
 {
-    "name": "download-backup",
+    "name": "getresbd",
     "version": "1",
     "description": "Скачивание бэкапов с ФТП на сервер",
     "mode": "single",
@@ -12,10 +12,10 @@
         "afterInstall": {}
     },
     "commands": {
-        "get": {
-            "name": "Скачать Бэкап БД с ФТП на сервер",
+        "getresbd": {
+            "name": "Скачать Бэкап БД с ФТП на сервер, распаковать и восстановить БД",
             "description": "",
-            "script": "./get.sh",
+            "script": "./getresbd.sh",
             "args": [
                 {
                     "key": "",
@@ -35,6 +35,13 @@
                     "key": "",
                     "name": "Имя файла бэкапа",
                     "description": "Введите имя файла бэкапа без расширения, пример: backup",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "",
+                    "name": "Имя Базы Данных",
+                    "description": "Введите имя базы данных, пример: dortmund_bd",
                     "default": "",
                     "required": true
                 }
