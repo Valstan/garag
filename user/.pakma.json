@@ -9,13 +9,13 @@
 	"dependencies": {},
 	"triggers": {
 		"beforeInstall": {},
-		"afterInstall": "add-user"
+		"afterInstall": "add"
 	},
 	"commands": {
-		"add-user": {
+		"add": {
 			"name": "Создание пользователя",
 			"description": "",
-			"script": "./add-user.sh",
+			"script": "./add.sh",
 			"args": [
 				{
                     "key": "",
@@ -32,6 +32,25 @@
 					"required": true                    
 				}
 			]
+		},
+		"remove": {
+			"name": "Удаление пользователя",
+			"description": "",
+			"script": "./remove.sh",
+			"args": [
+				{
+                    "key": "",
+                    "name": "Имя пользователя",
+                    "description": "Введите имя пользователя, пример: valstan",
+					"default": "",
+					"required": true
+				}
+			]
+		},
+		"list": {
+			"name": "Список пользователей в системе",
+			"description": "",
+			"script": "./list.sh"			
 		}
 	}
 }
