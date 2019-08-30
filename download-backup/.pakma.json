@@ -1,0 +1,44 @@
+{
+    "name": "download-backup",
+    "version": "1",
+    "description": "Скачивание бэкапов с ФТП на сервер",
+    "mode": "single",
+    "defaults": {
+        "cwd": "${folderName}/${packageName}"
+    },
+    "dependencies": {},
+    "triggers": {
+        "beforeInstall": {},
+        "afterInstall": {}
+    },
+    "commands": {
+        "get": {
+            "name": "Скачать Бэкап БД с ФТП на сервер",
+            "description": "",
+            "script": "./get.sh",
+            "args": [
+                {
+                    "key": "",
+                    "name": "Адрес ФТП",
+                    "description": "Введите адрес ФТП и полный путь до папки бэкапа, пример: ftp://id45d.myjino.ru:/domains/id45d.myjino.ru/BACKUPS/",
+                    "default": "",
+                    "required": true
+                },                
+                {
+                    "key": "",
+                    "name": "Имя местного сервера",
+                    "description": "Введите имя сервера (без точек и пробелов), пример: irkaserver_ru",
+                    "default": "",
+                    "required": true
+                },
+                {
+                    "key": "",
+                    "name": "Имя файла бэкапа",
+                    "description": "Введите имя файла бэкапа без расширения, пример: backup",
+                    "default": "",
+                    "required": true
+                }
+            ]
+        }
+    }
+}
