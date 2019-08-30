@@ -1,0 +1,21 @@
+{
+    "name": "utilites",
+    "version": "1",
+    "description": "Установка необходимых утилит на сервер",
+    "mode": "single",
+    "defaults": {
+        "cwd": "${folderName}/${packageName}"
+    },
+    "dependencies": {},
+    "triggers": {
+        "beforeInstall": {},
+        "afterInstall": {}
+    },
+    "commands": {
+        "utilites": {
+            "name": "Установить необходимые утилиты",
+            "description": "",
+            "script": "./utilites.sh"            
+        }
+    }
+}
