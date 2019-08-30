@@ -3,6 +3,7 @@
 # $1 адрес ФТП id45d@id45d.myjino.ru:/domains/id45d.myjino.ru/BACKUPS/
 # $2 имя сервера: gazpromlog
 # $3 имя бэкапа без расширения: backup
+# $4 имя базы данных Монго
 DIR=/home/$(whoami)/mongo_backup
 rm $DIR/$3.zip
 rm -rf $DIR/$3
