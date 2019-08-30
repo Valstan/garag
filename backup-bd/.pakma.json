@@ -25,28 +25,28 @@
                     "required": true
                 },
                 {
-                    "key": "ftp_dir_backup",
+                    "key": "",
                     "name": "Папка с бэкапами базы данных на ФТП",
                     "description": "Введите имя папки с бэкапами, пример: backups",
                     "default": "",
                     "required": true
                 },
                 {
-                    "key": "port_sftp",
+                    "key": "",
                     "name": "Порт SFTP сервера",
                     "description": "Введите порт SFTP сервера, пример: 2222",
                     "default": "",
                     "required": true
                 },
                 {
-                    "key": "nameBD",
+                    "key": "",
                     "name": "Имя базы данных",
                     "description": "Введите имя базы данных, пример: FortunalogCRM",
                     "default": "",
                     "required": true
                 },
                 {
-                    "key": "name_server",
+                    "key": "",
                     "name": "Имя местного сервера",
                     "description": "Введите имя сервера (без точек и пробелов), пример: irkaserver_ru",
                     "default": "",
@@ -58,20 +58,6 @@
             "name": "Создание папки Бэкапа базы данных Монго текущего пользователя",
             "description": "",
             "script": "./setup.sh"
-        },
-        "backup--------------": {
-            "name": "Создание бэкапа",
-            "description": "",
-            "script": "./create-backup.sh",
-            "args": [
-                {
-                    "key": "",
-                    "name": "Имя базы данных",
-                    "description": "Введите имя базы, пример: mybd",
-                    "default": "",
-                    "required": true
-                }
-            ]
         },
         "cron-change--------------": {
             "name": "Создание расписания крона",
