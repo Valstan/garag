@@ -46,11 +46,6 @@
 					"required": true
 				}
 			]
-		},
-		"list": {
-			"name": "Список пользователей в системе",
-			"description": "",
-			"script": "./list.sh"			
-		}
+		}		
 	}
 }
